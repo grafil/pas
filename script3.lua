@@ -1,4 +1,4 @@
-elseif game.PlaceId == 9285238704 then 
+
 
     lib:SetTitle("Z.hub Race Clicker Edition")
 
