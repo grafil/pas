@@ -1,4 +1,3 @@
-elseif game.PlaceId == 5938036553 then
 
     lib:SetTitle("Z.hub frontlines")
     
