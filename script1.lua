@@ -1,4 +1,4 @@
-if game.PlaceId == 9498006165 then
+
 
     lib:SetTitle("Z.hub Tapping Simulator")
 
