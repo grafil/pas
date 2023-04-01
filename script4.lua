@@ -1,4 +1,4 @@
-elseif game.PlaceId == 662417684 then
+
 
     lib:SetTitle("Z.hub Lucky blocks battlegrounds")
 
