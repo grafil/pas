@@ -20,18 +20,7 @@
         game:GetService("ReplicatedStorage").SpawnRainbowBlock:FireServer()
     end)
 
-    main:NewButton("Kill all (requires Hex Spitter item! AND EQUIP IT!)", function()
-        local HexSpitter = game.Players.LocalPlayer.Character.HexSpitter
-		local ServerControl = HexSpitter.Remotes.ServerControl
-		for _ = 1,20 do
-			for _, Child in next, game.Players:GetPlayers() do
-				if Child ~= game.Players.LocalPlayer then
-					ServerControl:InvokeServer('RayHit', {['Position'] = Vector3.new(0, 0, 0), ["Hit"] = Child.Character.Head})
-				end
-			end
-		end
-
-    end)
+main:NewButton("Kill all (requires Hex Spitter item! AND EQUIP IT!)", function() local HexSpitter = game.Players.LocalPlayer.Character.HexSpitter local ServerControl = HexSpitter.Remotes.ServerControl for _ = 1,20 do for _, Child in next, game.Players:GetPlayers() do if Child ~= game.Players.LocalPlayer then ServerControl:InvokeServer('RayHit', {['Position'] = Vector3.new(0, 0, 0), ["Hit"] = Child.Character.Head}) end end end end)
 
     local Teleports = lib:NewTab("Teleports", "You can find teleports here!")
 
@@ -50,35 +39,7 @@
         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = value 
     end)
 
-    Character:NewButton("Infinite jump (f to toggle)",function()
-        getgenv().infinjump = true
-
-        local Player = game:GetService("Players").LocalPlayer
-        local Mouse = Player:GetMouse()
-        Mouse.KeyDown:connect(function(k)
-        if getgenv().infinjump then
-        if k:byte() == 32 then
-        Humanoid = game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
-        Humanoid:ChangeState("Jumping")
-        wait(0.1)
-        Humanoid:ChangeState("Seated")
-        end
-        end
-        end)
-
-        local Player = game:GetService("Players").LocalPlayer
-        local Mouse = Player:GetMouse()
-        Mouse.KeyDown:connect(function(k)
-        k = k:lower()
-        if k == "f" then
-        if getgenv().infinjump == true then
-        getgenv().infinjump = false
-        else
-        getgenv().infinjump = true
-        end
-        end
-        end)
-    end)
+Character:NewButton("Infinite jump (f to toggle)",function() getgenv().infinjump = true local Player = game:GetService("Players").LocalPlayer local Mouse = Player:GetMouse() Mouse.KeyDown:connect(function(k) if getgenv().infinjump then if k:byte() == 32 then Humanoid = game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid") Humanoid:ChangeState("Jumping") wait(0.1) Humanoid:ChangeState("Seated") end end end) local Player = game:GetService("Players").LocalPlayer local Mouse = Player:GetMouse() Mouse.KeyDown:connect(function(k) k = k:lower() if k == "f" then if getgenv().infinjump == true then getgenv().infinjump = false else getgenv().infinjump = true end end end) end)
 
     Character:NewButton("Fly (BETA, x to toggle)",function()
             repeat wait() 
