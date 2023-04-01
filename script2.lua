@@ -1,4 +1,4 @@
- elseif game.PlaceId == 5293755937 then
+
     
     local lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/insanedude59/UILib/main/source"))();
 
